@@ -1,0 +1,13 @@
+rootProject.name = 'local-live-consumer-mobile'
+// include ':react-native-voxeet-firebase'
+// project(':react-native-voxeet-firebase').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-voxeet-firebase/android')
+include ':@voxeet_react-native-voxeet-conferencekit'
+project(':@voxeet_react-native-voxeet-conferencekit').projectDir = new File(rootProject.projectDir, '../node_modules/@voxeet/react-native-voxeet-conferencekit/android')
+
+apply from: '../node_modules/react-native-unimodules/gradle.groovy'
+includeUnimodulesProjects()
+
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesSettingsGradle(settings)
+
+include ':app'
